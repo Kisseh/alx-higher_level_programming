@@ -1,7 +1,6 @@
 #!/usr/bin/python3
-for x in range(90, 64, -1):
-    if x % 2 != 0:
-        alpha = x
-    else:
-        alpha = x + 32
-    print("{:s}".format(chr(alpha)), end="")
+
+i = 0
+for c in range(ord('z'), ord('a') - 1, -1):
+    print("{}".format(chr(c - i)), end="")
+    i = 32 if i == 0 else 0
