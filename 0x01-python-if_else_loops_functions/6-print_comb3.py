@@ -1,8 +1,12 @@
 #!/usr/bin/python3
-
-for x in range(0, 10):
-    for y in range(x + 1, 10):
-        if (not (x == 8 and y == 9)):
-            print("{}{}".format(x, y), end=", ")
+for i in range(10):
+    for j in range(10):
+        if i == j:
+            continue
+        elif i > j:
+            continue
+        elif i == 8 and j == 9:
+            continue
         else:
-            print("{}{}".format(x, y))
+            print('{}{}, '.format(i, j), end="")
+print(89)

@@ -1,15 +1,7 @@
 #!/usr/bin/python3
-
-
 def search_replace(my_list, search, replace):
-    """
-    A function that replaces all occurrences
-    of an element by another in a new list
-    """
-    new_list = []
-    for element in my_list:
-        if element == search:
-            new_list.append(replace)
-        else:
-            new_list.append(element)
-    return new_list
+    _newlist = my_list.copy()
+    for i in range(len(_newlist)):
+        if _newlist[i] == search:
+           _newlist[i] = replace
+    return _newlist

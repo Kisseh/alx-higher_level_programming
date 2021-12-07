@@ -1,10 +1,7 @@
 #!/usr/bin/python3
-
 if __name__ == "__main__":
     import sys
-
-    total = 0
+    _sum = 0
     for i in range(len(sys.argv) - 1):
-        total += int(sys.argv[i + 1])
-    print("{}".format(total))
-
+        _sum = _sum + int(sys.argv[i + 1])
+    print('{}'.format(_sum))
