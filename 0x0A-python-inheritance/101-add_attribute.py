@@ -1,6 +1,10 @@
 #!/usr/bin/python3
-def add_attribute(obj, name, value):
-    if hasattr(obj, '__dict__') is False:
-        raise TypeError("can't add new attribute")
+"""Module add_attribute"""
+
+
+def add_attribute(cls, attribute, value):
+    """Add a new attribute if is posible"""
+    if isinstance(cls, (int, float, str, list, tuple)):
+        raise TypeError('can\'t add new attribute')
     else:
-        setattr(obj, name, value)
+        setattr(cls, attribute, value)

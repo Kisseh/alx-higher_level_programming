@@ -1,91 +1,50 @@
 #!/usr/bin/python3
-"""Documentation for BaseGeometry class"""
+"""Module 10-base_geometry"""
 
 
 class BaseGeometry:
-
-    """Base Geometry class that is empty"""
-
+    """Class BaseGeometry"""
     def area(self):
-        """Area function for geometry"""
-
-        raise Exception("area() is not implemented")
+        """Area method"""
+        raise Exception('area() is not implemented')
 
     def integer_validator(self, name, value):
-        """Validates an integer value
-
-        Args:
-            name (str): the string name
-            value (int): the value to be validated
-
-        Raises:
-            TypeError: if the value is not an integer
-            ValueError: if the value is less than or equal to 0
-        """
-
+        """integer_validator function"""
         if type(value) != int:
-            raise TypeError("{} must be an integer".format(name))
+            raise TypeError(name + ' must be an integer')
         if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
+            raise ValueError(name + ' must be greater than 0')
 
 
 class Rectangle(BaseGeometry):
-
-    """Rectangle class that inherits from BaseGeometry class"""
+    """Class BaseGeometry"""
 
     def __init__(self, width, height):
-        """Instantiation function
-
-        Args:
-            width (int): the width of the rectangle
-            height (int): the height of the rectangle
-        """
-
+        """Init"""
         self.integer_validator("width", width)
         self.integer_validator("height", height)
         self.__width = width
         self.__height = height
 
     def area(self):
-        """Area function
-
-        Returns:
-            The area of the rectangle
-        """
-
+        """Find the Area"""
         return self.__width * self.__height
 
     def __str__(self):
-        """The function for use in print() and str()
-
-        Returns:
-            Specially formated string
-        """
-
-        return ("[Rectangle] {}/{}".format(self.__width, self.__height))
+        """Overcharge __str__"""
+        string = "[Rectangle] " + str(self.__width) + "/" + str(self.__height)
+        return string
 
 
 class Square(Rectangle):
-
-    """Square class that inherits from Rectangle subclass which inherits
-       from BaseGeometry class"""
+    """Class Square"""
 
     def __init__(self, size):
-        """Instantiation function for size attribute
-
-        Args:
-            size (int): the size of the square
-        """
-
+        """Init Square"""
         self.integer_validator("size", size)
-        super().__init__(size, size)
         self.__size = size
+        super().__init__(size, size)
 
     def area(self):
-        """Area function for the square object
-
-        Returns:
-            Area of the square
-        """
-
+        """Find the area"""
         return self.__size ** 2
