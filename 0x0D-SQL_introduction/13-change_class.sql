@@ -1,3 +1,2 @@
--- Remove all records with score <= 5 in 'second_table' of 'hbtn_0c_0'
--- db name will be passed as arg to mysql cmd
+-- a script that removes all records with a score <= 5 in the table second_table
 DELETE FROM second_table WHERE score <= 5;
